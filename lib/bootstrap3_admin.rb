@@ -5,14 +5,14 @@ require 'simple_form'
 # -----------------------------------------------------------------------------
 require 'active_support/dependencies'
 # -----------------------------------------------------------------------------
-require 'bootstrap_admin/actions'
-require 'bootstrap_admin/active_record_extensions'
-require 'bootstrap_admin/attribute'
-require 'bootstrap_admin/version'
-require 'bootstrap_admin/responder'
-require 'bootstrap_admin/controller_config'
-require 'bootstrap_admin/controller_helpers'
-require 'bootstrap_admin/routes'
+require 'bootstrap3_admin/actions'
+require 'bootstrap3_admin/active_record_extensions'
+require 'bootstrap3_admin/attribute'
+require 'bootstrap3_admin/version'
+require 'bootstrap3_admin/responder'
+require 'bootstrap3_admin/controller_config'
+require 'bootstrap3_admin/controller_helpers'
+require 'bootstrap3_admin/routes'
 # -----------------------------------------------------------------------------
 require File.expand_path("../../config/initializers/simple_form.rb", __FILE__)
 # -----------------------------------------------------------------------------
@@ -22,6 +22,9 @@ module BootstrapAdmin
   class BootstrapAdminEngine < Rails::Engine
     config.autoload_paths << File.expand_path("../../app/helpers", __FILE__)
   end
+  
+  I18n.config.enforce_available_locales = false
+
   # =============================================================================
   # Defines the namespace where all the "bootstrap_admin" magic happens
   mattr_accessor :admin_namespace
